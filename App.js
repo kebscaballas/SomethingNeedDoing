@@ -1,26 +1,10 @@
 import React, { Component } from 'react';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 import MainComponent from './mainComponent';
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      testValue: ''
-    }
+const AppNavigator = createStackNavigator({
+  screen: MainComponent
+})
 
-    this.setTestValue = this.setTestValue.bind(this);
-  }
-
-  setTestValue(value) {
-    this.setState({
-      testValue: value
-    });
-  }
-
-  render() {
-    return (
-      <MainComponent />
-    );
-  }
-}
+export default createAppContainer(AppNavigator);
