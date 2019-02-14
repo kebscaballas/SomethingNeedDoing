@@ -4,7 +4,6 @@ import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import styles from './styles';
 
 import ToDoListComponent from './components/toDoList/toDoListComponent';
-import AddToDoItemComponent from './components/addToDoItem/addToDoItemComponent';
 
 export default class App extends Component {
   constructor(props) {
@@ -35,7 +34,9 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <ToDoListComponent toDoList={this.state.toDoList} />
-        <AddToDoItemComponent addToDoHandler={this.addToDoHandler} />
+        <Button title="Add Task" onPress={() => this.props.navigation.navigate('AddScreen', {
+          addToDoHandler: this.addToDoHandler
+        })} />
       </View>
     );
   }

@@ -9,7 +9,7 @@ export default class AddToDoItemComponent extends Component {
   render() { 
     return(
       <View style={styles.container}>
-        <AddToDoItemFormComponent addToDoHandler={this.props.addToDoHandler}/>
+        <AddToDoItemFormComponent addToDoHandler={this.props.navigation.getParam('addToDoHandler', null)}/>
       </View>
     );
   }
