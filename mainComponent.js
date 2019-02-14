@@ -35,7 +35,7 @@ export default class App extends Component {
       <View style={styles.container}>
         <ToDoListComponent toDoList={this.state.toDoList} />
         <Button title="Add Task" onPress={() => this.props.navigation.navigate('AddScreen', {
-          addToDoHandler: this.addToDoHandler
+          addToDoHandler: this.addToDoHandler 
         })} />
       </View>
     );

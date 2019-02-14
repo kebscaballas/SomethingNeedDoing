@@ -3,6 +3,7 @@ import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 import MainComponent from './mainComponent';
 import AddToDoItemComponent from './components/addToDoItem/addToDoItemComponent';
+import ToDoListItemDetailsComponent from './components/toDoList/components/toDoListItemDetails/toDoListItemDetailsComponent';
 
 const AppNavigator = createStackNavigator({
   // screen: MainComponent
@@ -11,6 +12,9 @@ const AppNavigator = createStackNavigator({
   }, 
   AddScreen: {
     screen: AddToDoItemComponent
+  },
+  DetailsScreen: {
+    screen: ToDoListItemDetailsComponent
   }
 }, {
   initialRouteName: 'MainScreen',
@@ -20,20 +24,6 @@ const AppNavigator = createStackNavigator({
 const AppContainer = createAppContainer(AppNavigator);
 
 export default class App extends Component {
-  addToDoHandler(title, description, dateAdded) {
-    this.setState({
-      ...this.state,
-      toDoList: [
-        ...this.state.toDoList,
-        {
-          title,
-          description,
-          dateAdded
-        }
-      ]
-    }, () => {alert('Successfully added to list!')});
-  }
-  
   render() {
     return (
       <AppContainer />
